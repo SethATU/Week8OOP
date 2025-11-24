@@ -14,4 +14,11 @@ public class CalculatorTest {
 
     @Test
     public void testAdd_Success() { assertEquals(20, calc.add(16,4)); }
+
+    @Test
+    public void testAdd_fail()
+    {
+        Exception ex = assertThrows(ArithmeticException.class, ()-> calc.add(Integer.MAX_VALUE, 1));
+        assertEquals("Number cannot be greater than or equal to Integer.MAX_VALUE", ex.getMessage());
+    }
 }
