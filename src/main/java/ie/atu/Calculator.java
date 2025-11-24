@@ -22,4 +22,11 @@ public class Calculator {
             throw new ArithmeticException("Number cannot be greater than or equal to Integer.MAX_VALUE");
         return result;
     }
+
+    public int div(int firstNum, int secondNum) {
+        if (secondNum == 0)
+            throw new ArithmeticException("Cannot divide by 0");
+        int result = firstNum / secondNum;
+        return result;
+    }
 }
