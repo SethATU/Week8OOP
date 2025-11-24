@@ -15,4 +15,11 @@ public class Calculator {
         int result = firstNum - secondNum;
         return result;
     }
+
+    public int mul(int firstNum, int secondNum) {
+        int result = firstNum * secondNum;
+        if (result/secondNum != firstNum)
+            throw new ArithmeticException("Number cannot be greater than or equal to Integer.MAX_VALUE");
+        return result;
+    }
 }
