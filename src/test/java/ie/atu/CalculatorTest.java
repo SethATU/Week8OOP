@@ -21,4 +21,14 @@ public class CalculatorTest {
         Exception ex = assertThrows(ArithmeticException.class, ()-> calc.add(Integer.MAX_VALUE, 1));
         assertEquals("Number cannot be greater than or equal to Integer.MAX_VALUE", ex.getMessage());
     }
+
+    @Test
+    public void testSub_Success() {assertEquals(15, calc.sub(30,15)); }
+
+    @Test
+    public void testSub_Fail()
+    {
+        Exception ex = assertThrows(ArithmeticException.class, ()-> calc.sub(Integer.MIN_VALUE, 1));
+        assertEquals("Number cannot be less than or equal to Integer.MIN_VALUE", ex.getMessage());
+    }
 }
